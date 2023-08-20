@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap');
+
+
+.flex-kotak{
+	margin: 0;
+	padding :0;
+	box-sizing: border-box;
+	font-family: 'Oswald', sans-serif;
+
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	min-height : 100vh;
+	background : #3d3d3d;
+}
+.kotak{	
+	display : flex;
+	transform-style : preserve-3d;
+	gap :10px;
+	transform : rotateY(30deg) rotateX(10deg);
+}
+.kotak .text {
+	position : relative;
+	width : 100px;
+	height : 100px;
+	transform-style : preserve-3d;
+	transition : 2.5s ease-in-out;
+	transition-delay : calc(0.25s * var(--j));
+}
+.kotak:hover .text{
+	transform:rotateX(-360deg);
+}
+
+.kotak:hover .text:last-child{
+		transform:rotateX(630deg);
+}
+
+.kotak .text::before{
+	content : '';
+	position : absolute;
+	width : 100px;
+	height : 100px;
+	background : #373737;
+	transform-origin:left;
+	transform : rotateY(90deg) translateX(-50px);
+}
+.kotak .text:last-child:before{
+	background : #29ab3c;
+}
+
+.kotak .text span{
+	position:absolute;
+	top:0;
+	left : 0;
+	width:100%;
+	height:100%;
+	background : linear-gradient(#434343, #535353);
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	font-size : 4em;
+	color : #fff;
+	transform-style: preserve-3d;
+	transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
+
+.kotak .text:last-child span{
+	
+	background : linear-gradient(#29c040, #32ed4e);
+	color : #000;
+}
